@@ -1,0 +1,45 @@
+package com.example.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest(classes = TestApplication.class) // I needed to change this (add (classes = TestApplication.class) for the test to run
+class TestApplicationTests {
+
+	public boolean isAllowedToEnterLiquorStore(int age, boolean inCompanyOfAParent, boolean hasADog, boolean isBlind) {
+		if(!isBlind && hasADog){
+			return false;
+		}
+		if(!inCompanyOfAParent && age < 20){
+			return false;
+		}
+		return true;
+	}
+
+
+	@Test
+	@DisplayName("")
+	void shouldReturnTrueWhenNumberIsEven() {
+		// given
+
+		//when
+
+		//then
+		// Assertions.assertTrue(result);
+	}
+
+	@Test
+	@DisplayName("")
+	void shouldReturnFalseWhenNumberIsOdd() {
+		// given
+		int OddNumber = 3;
+		// When
+		boolean result = isNumberEven(OddNumber);
+		//Then
+		Assertions.assertFalse(result);
+	}
+
+
+}
